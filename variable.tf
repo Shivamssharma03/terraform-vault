@@ -1,11 +1,11 @@
-variable "ami" { 
-    description = "ami of the instance"
-    type = string 
-    }
+variable "ami" {
+  description = "ami of the instance"
+  type        = string
+}
 
 variable "tags" {
-    type = string
-  
+  type = string
+
 }
 
 
@@ -13,7 +13,7 @@ variable "vault_address" {
   description = "Vault server address"
   type        = string
   sensitive   = true
-  
+
 }
 
 variable "vault_role_id" {
