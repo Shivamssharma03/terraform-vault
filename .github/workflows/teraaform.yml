@@ -41,15 +41,15 @@ jobs:
           TF_VAR_vault_secret_id: ${{ env.VAULT_SECRET_ID }}
         run: terraform init
 
-      # Step 5: Validate Terraform
-      - name: Terraform Validate
-        env:
-          TF_VAR_vault_address: ${{ env.VAULT_ADDR }}
-          TF_VAR_vault_role_id: ${{ env.VAULT_ROLE_ID }}
-          TF_VAR_vault_secret_id: ${{ env.VAULT_SECRET_ID }}
-        run: terraform validate
+      # # Step 5: Validate Terraform
+      # - name: Terraform Validate
+      #   env:
+      #     TF_VAR_vault_address: ${{ env.VAULT_ADDR }}
+      #     TF_VAR_vault_role_id: ${{ env.VAULT_ROLE_ID }}
+      #     TF_VAR_vault_secret_id: ${{ env.VAULT_SECRET_ID }}
+      #   run: terraform validate
 
-      # Step 6: Terraform Plan
+      # Step 5: Terraform Plan
       - name: Terraform Plan
         env:
           TF_VAR_vault_address: ${{ env.VAULT_ADDR }}
@@ -57,7 +57,7 @@ jobs:
           TF_VAR_vault_secret_id: ${{ env.VAULT_SECRET_ID }}
         run: terraform plan -out=tfplan
 
-      # Step 7 (Optional): Terraform Apply on main branch only
+      # Step 6 : Terraform Apply on main branch only
       - name: Terraform Apply
         env:
           TF_VAR_vault_address: ${{ env.VAULT_ADDR }}

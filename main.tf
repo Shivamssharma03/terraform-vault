@@ -1,6 +1,5 @@
 provider "aws" {
   region = "us-east-1"
-
 }
 
 provider "vault" {
@@ -17,13 +16,9 @@ provider "vault" {
   }
 }
 
-
-
-
 data "vault_kv_secret_v2" "example" {
   mount = "kv"
   name  = "kv"
-
 }
 
 resource "aws_instance" "my_instance" {
@@ -31,7 +26,6 @@ resource "aws_instance" "my_instance" {
   instance_type = data.vault_kv_secret_v2.example.data["instance_type"]
 
   tags = {
-    Name = shivi
+    Name = var.tags
   }
 }
-
